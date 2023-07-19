@@ -1,10 +1,11 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 const app = express();
 const port = 3000; // You can use any available port you prefer
 
-
+app.use(cors());
 app.get('/login', async (req, res) => {
     try {
         const clientId = '90431baf-d481-4648-9c73-274f7040b11d';
