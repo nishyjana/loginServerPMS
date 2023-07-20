@@ -8,10 +8,8 @@ const port = 3000;
 app.use(cors());
 app.get('/login', async (req, res) => {
     try {
-        const clientId = '90431baf-d481-4648-9c73-274f7040b11d';
-        const clientSecret = 'NbV8Q~iCEEBi1GBNHX2lRkZxYLXnnO~P.3Dm9aM0';
-        const scope = 'https://graph.microsoft.com/.default';
 
+        const { clientId, clientSecret, scope } = req.query;
         // Request access token using client_credentials flow
         const tokenResponse = await axios.post(
             'https://login.microsoftonline.com/4258257d-d3fc-442c-9839-27f31a89da9e/oauth2/v2.0/token',
